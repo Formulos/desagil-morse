@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MorseTree"> // essa classe deve ser o main, eu acho que vai ser o morse tree mais não tenho certeza, de qualquer maneira é so mudar para o main depois
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SendActivity"></activity> // deve ser a classe que manda o sms
     </application>
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>
