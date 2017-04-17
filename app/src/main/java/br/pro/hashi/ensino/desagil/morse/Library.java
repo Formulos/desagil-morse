@@ -10,8 +10,9 @@ import java.util.List;
 
 public class Library {
 
-    public List<String> premadePhrases;
 
+    public List<String> premadePhrases;
+    public String PhoneNumber = ("+5511957837723");
     public Library(){
 
         this.premadePhrases = new LinkedList<>();
