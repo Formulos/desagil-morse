@@ -9,23 +9,24 @@ import java.util.List;
 public class SelectorActivity extends UtilityActivity {
 
     protected TextView phraseSelector= (TextView) findViewById(R.id.phraseSelector);
-    protected List phraseBook = (new Library()).premadePhrases;
+    protected List<String> phraseBook = (new Library()).premadePhrases;
+    protected int phraseIter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selector);
 
-        protected int phraseIter= 0;
+        phraseIter= 0;
 
-        phraseSelector.setOnTouchListener(new OnSwipeTouchListener(SelectorActivity)){
+        phraseSelector.setOnTouchListener(new OnSwipeTouchListener(this){
             public void onSwipeTop(){
                 //nada
             }
             public void onSwipeRight(){
                 phraseIter+= 1;
                 phraseIter%= phraseBook.size();
-                phraseSelector.setText();
+                phraseSelector.setText(phraseBook.get(phraseIter));
             }
             public void onSwipeBottom(){
                 //nada
@@ -33,15 +34,15 @@ public class SelectorActivity extends UtilityActivity {
             public void onSwipeUp(){
                 phraseIter+= phraseBook.size() - 1;
                 phraseIter%= phraseBook.size();
-                phraseSelector.setText();
+                phraseSelector.setText(phraseBook.get(phraseIter));
             }
-        }
+        });
     }
 
 
     public void askConfirm(View view) {
 
-        Utilities.confim(this);
+        Utilities.confirm(this);
     }
 
     public void listenConfirm(boolean isConfirmed){

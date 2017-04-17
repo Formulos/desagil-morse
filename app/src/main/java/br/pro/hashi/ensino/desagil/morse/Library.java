@@ -10,11 +10,11 @@ import java.util.List;
 
 public class Library {
 
-    public List premadePhrases;
+    public List<String> premadePhrases;
 
     public Library(){
 
-        this.premadePhrases = new LinkedList();
+        this.premadePhrases = new LinkedList<>();
         this.premadePhrases.add("Preciso ir ao banheiro");
         this.premadePhrases.add("Preciso de água");
         this.premadePhrases.add("Estou com fome");
