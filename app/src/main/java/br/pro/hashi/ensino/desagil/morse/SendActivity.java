@@ -12,7 +12,7 @@ public class SendActivity extends AppCompatActivity {
 
     private EditText numberEdit;
     private EditText messageEdit;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +28,11 @@ public class SendActivity extends AppCompatActivity {
         try {
             manager.sendTextMessage(number, null, message, null, null);
 
-            Toast toast = Toast.makeText(this, "Message sent to number!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Menssagem enviada ao número", Toast.LENGTH_SHORT);
             toast.show();
         }
         catch(IllegalArgumentException exception) {
-            Log.e("SendActivity", "number or message empty");
+            Log.e("SendActivity", "número ou mensagens vazios");
         }
     }
 }
