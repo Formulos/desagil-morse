@@ -6,7 +6,9 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class SendActivity extends AppCompatActivity {
     Library lib = new Library();
@@ -16,10 +18,21 @@ public class SendActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText(message);
+
+        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
+        layout.addView(textView);
     }
 
-    public void sendMessage(String message) {
+    public void sendMessage(View view) {
         SmsManager manager = SmsManager.getDefault();
+
+
 
         try {
             manager.sendTextMessage(lib.PhoneNumber, null, message, null, null);
