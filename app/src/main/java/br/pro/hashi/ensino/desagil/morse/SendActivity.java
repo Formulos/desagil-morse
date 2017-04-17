@@ -9,8 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class SendActivity extends AppCompatActivity {
-
-    private EditText numberEdit;
+    Library lib = new Library();
     private EditText messageEdit;
 
     @Override
@@ -22,11 +21,10 @@ public class SendActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         SmsManager manager = SmsManager.getDefault();
 
-        String number = numberEdit.getText().toString();
         String message = messageEdit.getText().toString();
 
         try {
-            manager.sendTextMessage(number, null, message, null, null);
+            manager.sendTextMessage(lib.PhoneNumber, null, message, null, null);
 
             Toast toast = Toast.makeText(this, "Menssagem enviada ao número", Toast.LENGTH_SHORT);
             toast.show();

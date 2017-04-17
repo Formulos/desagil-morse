@@ -9,6 +9,9 @@ import java.util.List;
  */
 
 public class Library {
+
+    public String PhoneNumber = ("+5511957837723");
+
     public static void main(String args[]){
         List PremadePhrases = new LinkedList();
         PremadePhrases.add("Preciso ir ao banheiro");
