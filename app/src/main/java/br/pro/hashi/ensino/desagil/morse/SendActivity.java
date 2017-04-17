@@ -20,13 +20,13 @@ public class SendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(SelectorActivity.phrase);
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
 
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
-        layout.addView(textView);
+        //ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
+        //layout.addView(textView);
     }
 
     public void sendMessage(View view) {
