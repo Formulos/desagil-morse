@@ -9,12 +9,16 @@ import java.util.List;
  */
 
 public class Library {
-    public static void main(String args[]){
-        List PremadePhrases = new LinkedList();
-        PremadePhrases.add("Preciso ir ao banheiro");
-        PremadePhrases.add("Preciso de água");
-        PremadePhrases.add("Estou com fome");
-        PremadePhrases.add("Preciso IMEDIATAMENTE de...");
-        PremadePhrases.add("Preciso IMEDIATAMENTE falar com...");
+
+    public List premadePhrases;
+
+    public Library(){
+
+        this.premadePhrases = new LinkedList();
+        this.premadePhrases.add("Preciso ir ao banheiro");
+        this.premadePhrases.add("Preciso de água");
+        this.premadePhrases.add("Estou com fome");
+        this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
+        this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
     }
 }
