@@ -18,10 +18,8 @@ public class SendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send);
     }
 
-    public void sendMessage(View view) {
+    public void sendMessage(String message) {
         SmsManager manager = SmsManager.getDefault();
-
-        String message = messageEdit.getText().toString();
 
         try {
             manager.sendTextMessage(lib.PhoneNumber, null, message, null, null);
