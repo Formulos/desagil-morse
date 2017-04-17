@@ -1,10 +1,11 @@
 package br.pro.hashi.ensino.desagil.morse;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.TextView;
 
 public class MainActivity extends UtilityActivity {
@@ -22,17 +23,22 @@ public class MainActivity extends UtilityActivity {
     }
 
     public void seeTheTruth(View v){
-        Utilities.confirm(this,"do you wanna se the truth?");
+
+        Utilities.confirm(this,"do you wanna see the truth?");
+
     }
 
     public void listenConfirm(boolean answer){
 
         if(answer){
-            titleText.setText("Welcome to my world of pain!");
+
+            startActivity(new Intent(this, SelectorActivity.class));
+
         }
         else{
             titleText.setText("ok then");
         }
 
     }
+
 }
