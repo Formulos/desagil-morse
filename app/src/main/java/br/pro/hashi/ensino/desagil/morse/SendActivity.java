@@ -13,6 +13,7 @@ import android.content.Intent;
 public class SendActivity extends AppCompatActivity {
     Library lib = new Library();
     private EditText messageEdit;
+    private String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class SendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(SelectorActivity.phrase);
+        message = intent.getStringExtra("phrase");
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
