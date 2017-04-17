@@ -10,14 +10,12 @@ import android.content.DialogInterface;
 
 
 public class Utilities {
-    public static void confirm(final UtilityActivity activity){
-        String label = "Are you sure?";
+    public static void confirm(final UtilityActivity activity, String label){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         builder.setCancelable(true);
-        builder.setTitle("Title");
-        builder.setMessage("Message");
+        builder.setTitle(label);
         builder.setPositiveButton("Confirm",
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -34,5 +32,9 @@ public class Utilities {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    public static void confirm(final UtilityActivity activity){
+        confirm(activity,"Tem certeza?");
     }
 }
