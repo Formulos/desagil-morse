@@ -49,9 +49,9 @@ public class SelectorActivity extends UtilityActivity {
     public void listenConfirm(boolean isConfirmed){
 
         if (isConfirmed){
-            Intent act= new Intent(this, SendActivity.class);
-            act.putExtra("phrase", phraseBook.get(phraseIter));
-            startActivity(act);
+            //Intent act= new Intent(this, SendActivity.class);
+            //act.putExtra("phrase", phraseBook.get(phraseIter));
+            //startActivity(act);
         }
     }
 }
