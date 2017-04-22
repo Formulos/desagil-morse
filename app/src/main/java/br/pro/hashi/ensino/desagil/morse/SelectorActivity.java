@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
         phraseBook= (new Library()).premadePhrases;
 
         phraseIter= 0;
+        phraseSelector.setText(phraseBook.get(phraseIter));
 
         phraseSelector.setOnTouchListener(new OnSwipeTouchListener(this){
             public void onSwipeTop(){
@@ -66,6 +68,7 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
 
         if (isConfirmed){
             Intent act= new Intent(this, SendActivity.class);
+            Log.d(phraseBook.get(phraseIter),"AAA");
             act.putExtra("phrase", phraseBook.get(phraseIter));
             startActivity(act);
         }

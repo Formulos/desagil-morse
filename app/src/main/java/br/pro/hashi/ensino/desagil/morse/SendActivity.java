@@ -22,9 +22,10 @@ public class SendActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         message = intent.getStringExtra("phrase");
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+        Log.d(message, "BBB");
+        TextView phrase= (TextView) findViewById(R.id.phrase);
+        phrase.setTextSize(40);
+        phrase.setText(message);
 
         //ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
         //layout.addView(textView);
@@ -36,9 +37,9 @@ public class SendActivity extends AppCompatActivity {
 
 
         try {
-            manager.sendTextMessage(lib.PhoneNumber, null, message, null, null);
+            manager.sendTextMessage(lib.phoneNumber, null, message, null, null);
 
-            Toast toast = Toast.makeText(this, "Menssagem enviada ao número", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Mensagem enviada ao número", Toast.LENGTH_SHORT);
             toast.show();
         }
         catch(IllegalArgumentException exception) {

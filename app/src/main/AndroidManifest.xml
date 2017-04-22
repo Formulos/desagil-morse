@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.pro.hashi.ensino.desagil.morse">
 
+
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
@@ -25,6 +26,4 @@
 
         <activity android:name=".SendActivity"></activity>
     </application>
-
-    <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>
