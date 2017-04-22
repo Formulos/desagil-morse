@@ -19,8 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SelectorActivity">
+        </activity>
+
         <activity android:name=".SendActivity"></activity>
-        // deve ser a classe que manda o sms
     </application>
 
     <uses-permission android:name="android.permission.SEND_SMS" />

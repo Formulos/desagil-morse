@@ -12,7 +12,7 @@ import android.content.DialogInterface;
 public class Utilities {
     public static void confirm(final UtilityActivity activity, String label){
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity.getContext());
 
         builder.setCancelable(true);
         builder.setTitle(label);
