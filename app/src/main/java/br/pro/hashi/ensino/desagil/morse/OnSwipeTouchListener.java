@@ -1,6 +1,7 @@
 package br.pro.hashi.ensino.desagil.morse;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -17,6 +18,7 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+
         return gestureDetector.onTouchEvent(event);
     }
 
@@ -24,14 +26,20 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
         private static final int SWIPE_THRESHOLD = 100;
         private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+        private int test = 0;
 
         @Override
         public boolean onDown(MotionEvent e) {
+            test+=1;
+            if (test==2)
+                onTest();
+
             return true;
         }
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            test= 0;
             boolean result = false;
             try {
                 float diffY = e2.getY() - e1.getY();
@@ -53,6 +61,9 @@ public class OnSwipeTouchListener implements OnTouchListener {
                         onSwipeTop();
                     }
                     result = true;
+                }else{
+                    onTest();
+                    result= true;
                 }
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -71,5 +82,9 @@ public class OnSwipeTouchListener implements OnTouchListener {
     }
 
     public void onSwipeBottom() {
+    }
+
+    public void onTest(){
+
     }
 }

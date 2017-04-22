@@ -14,9 +14,12 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
     private TextView titleText;
     private Button button;
 
+    public static MainActivity context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MainActivity.setSingle(this);
         setContentView(R.layout.activity_main);
 
         titleText = (TextView) findViewById(R.id.titleText);
@@ -46,8 +49,16 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
     }
 
+    public static void setSingle(MainActivity context){
+        MainActivity.context= context;
+    }
+
+    public static MainActivity getSingle(){
+        return MainActivity.context;
+    }
+
     public Context getContext(){
-        return this;
+        return MainActivity.context;
     }
 
 }

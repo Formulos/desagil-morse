@@ -4,26 +4,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class SelectorActivity extends AppCompatActivity implements UtilityActivity, View.OnTouchListener{
+public class SelectorActivity extends AppCompatActivity implements UtilityActivity{
 
     protected TextView phraseSelector;
     protected List<String> phraseBook;
     protected int phraseIter;
 
+    public static SelectorActivity context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
+        SelectorActivity.setSingle(this);
         setContentView(R.layout.activity_selector);
 
         phraseSelector= (TextView) findViewById(R.id.phraseSelector);
-        phraseSelector.setOnTouchListener(this);
         phraseBook= (new Library()).premadePhrases;
 
         phraseIter= 0;
@@ -49,20 +49,17 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
                 phraseSelector.setText(phraseBook.get(phraseIter));
             }
 
-            public void onDown(){
-
+            public void onTest(){
+                Utilities.confirm(SelectorActivity.getSingle());
             }
         });
 
 
     }
 
-    public boolean onTouch(View view, MotionEvent me) {
+    public void askConfirm(){
 
-        phraseSelector.setText(me.actionToString(me.getAction()));
         Utilities.confirm(this);
-
-        return true;
     }
 
     public void listenConfirm(boolean isConfirmed){
@@ -74,8 +71,15 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
         }
     }
 
-    public Context getContext(){
-        return this;
+    public static void setSingle(SelectorActivity context){
+        SelectorActivity.context= context;
     }
 
+    public static UtilityActivity getSingle(){
+        return SelectorActivity.context;
+    }
+
+    public Context getContext(){
+        return SelectorActivity.context;
+    }
 }

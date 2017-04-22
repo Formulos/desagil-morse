@@ -13,5 +13,4 @@ interface UtilityActivity{
     public abstract void listenConfirm(boolean isConfirmed);
 
     public abstract Context getContext();
-
 }
