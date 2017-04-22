@@ -4,12 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class SelectorActivity extends AppCompatActivity implements UtilityActivity {
+public class SelectorActivity extends AppCompatActivity implements UtilityActivity, View.OnTouchListener{
 
     protected TextView phraseSelector;
     protected List<String> phraseBook;
@@ -22,6 +23,7 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
         setContentView(R.layout.activity_selector);
 
         phraseSelector= (TextView) findViewById(R.id.phraseSelector);
+        phraseSelector.setOnTouchListener(this);
         phraseBook= (new Library()).premadePhrases;
 
         phraseIter= 0;
@@ -30,27 +32,37 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
             public void onSwipeTop(){
                 //nada
             }
+
             public void onSwipeRight(){
                 phraseIter+= 1;
                 phraseIter%= phraseBook.size();
                 phraseSelector.setText(phraseBook.get(phraseIter));
             }
+
             public void onSwipeBottom(){
                 //nada
             }
-            public void onSwipeUp(){
+
+            public void onSwipeLeft(){
                 phraseIter+= phraseBook.size() - 1;
                 phraseIter%= phraseBook.size();
                 phraseSelector.setText(phraseBook.get(phraseIter));
             }
+
+            public void onDown(){
+
+            }
         });
+
 
     }
 
+    public boolean onTouch(View view, MotionEvent me) {
 
-    public void askConfirm(View view) {
-
+        phraseSelector.setText(me.actionToString(me.getAction()));
         Utilities.confirm(this);
+
+        return true;
     }
 
     public void listenConfirm(boolean isConfirmed){
