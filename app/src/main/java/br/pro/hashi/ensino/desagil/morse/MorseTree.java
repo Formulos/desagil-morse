@@ -9,7 +9,11 @@ public class MorseTree {
     }
 
     private Node[] nodes;
-    private String[] MorseTree = {};
-
+    private String[] MorseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","Ü","L","Ä","P"
+            ,"J","B","X","C","Y","Z","Q","Ö","CH","5","4","S","3","É",null,"D","2",null,"È","+",null,null,"À","J"
+            ,"1","6","=","/",null,"Ç",null,"7",null,"G","Ñ","8",null,"9","0","S","U","R","S","U","R",null,null,null,null
+            ,null,null,null,null,null,null,null,null,"?","_",null,null,null,null,"''",null,null,".",null,null,null,null
+            ,"@",null,null,null,"'",null,null,"-",,null,null,null,null,null,null,null,null,";","!",null,"()",,null,null
+            ,null,null,null,",",null,null,null,null,":",null,null,null,null,null,null,null};
 
 }
