@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         System.out.println("Teste");
 
 
+
     }
 
     public void seeTheTruth(View v){
