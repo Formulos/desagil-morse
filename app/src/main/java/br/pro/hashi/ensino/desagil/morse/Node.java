@@ -10,7 +10,9 @@ public class Node {
     private String core;
     private Node left;
     private Node right;
+    private Node parent;
     private boolean last;
+    private boolean path;
 
     public Node(String core, Node left, Node right){
         this.core = core;
@@ -36,11 +38,25 @@ public class Node {
 
     public void setRight(Node node){
         this.right = node;
+        node.setParent(this);
+        node.setPath(true);
         checkLast();
     }
     public void setLeft(Node node){
         this.left = node;
+        node.setParent(this);
+        node.setPath(false);
         checkLast();
+    }
+    public  void setParent(Node node){
+        this.parent = node;
+    }
+    public void setPath(boolean path) {
+        this.path = path;
+    }
+
+    public String getCore(){
+        return this.core;
     }
     public Node getRight(){
         return this.right;
@@ -48,5 +64,18 @@ public class Node {
     public Node getLeft(){
         return this.left;
     }
+    public Node getParent(){
+        return this.parent;
+    }
+
+    public boolean getPath(){
+        return this.path;
+    }
+    /* Deixem isso comigo, gostei do problema -- jean
+    public boolean[] getFullPath(){
+        boolean[] lista = getFullPath(new Boolean[])
+        return lista
+    }
+    */
 
 }
