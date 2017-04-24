@@ -3,6 +3,8 @@ package br.pro.hashi.ensino.desagil.morse;
 
 public class MorseTree {
 
+    private Node[] tree;
+
     public Node[] generateTree(String[] cores){
         Node[] nodes = new Node[cores.length];
         for (int i = 0; i < cores.length;i++ ){
@@ -25,15 +27,24 @@ public class MorseTree {
             layer ++;
         }
         count = 0;
-        for (int i = 0; i < maxLayer; i++){
-            for(int j = 0; j <= temp[i].length;j ++){
+        for (int i = 0; i < maxLayer - 1; i++){
+            for(int j = 0; j < temp[i].length;j ++){
+                Node[] me = temp[i+1];
+                System.out.println(Library.morseTree.length);
+                Node meh = temp[i+1][j*2 + 1];
                 nodes[count].setLeft(temp[i + 1][j * 2]);
+
                 nodes[count].setRight(temp[i + 1][j * 2 + 1]);
                 count ++;
             }
         }
+        this.tree = nodes;
         return (nodes);
         
+    }
+
+    public Node[] getTree(){
+        return this.tree;
     }
 
 
