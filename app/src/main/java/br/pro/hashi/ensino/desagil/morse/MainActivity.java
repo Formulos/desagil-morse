@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
         System.out.println(tree.translate(new boolean[] {true, false, false, true}));
 
+        boolean[] test = tree.getAdress(23);
+        for (boolean i:
+             test) {
+            System.out.println(i + " |");
+
+        }
+
     }
 
     public void seeTheTruth(View v){

@@ -29,10 +29,7 @@ public class MorseTree {
         count = 0;
         for (int i = 0; i < maxLayer - 1; i++){
             for(int j = 0; j < temp[i].length;j ++){
-                Node[] me = temp[i+1];
-                Node meh = temp[i+1][j*2 + 1];
                 nodes[count].setLeft(temp[i + 1][j * 2]);
-
                 nodes[count].setRight(temp[i + 1][j * 2 + 1]);
                 count ++;
             }
@@ -55,6 +52,10 @@ public class MorseTree {
         }
 
         return node.getCore() != null ? node.getCore() : "blank";
+    }
+
+    public boolean[] getAdress(int index){
+        return tree[index].getFullPath();
     }
 
 }
