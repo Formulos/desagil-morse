@@ -8,15 +8,17 @@
 
     <TextView
         android:id="@+id/phraseSelector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
         android:layout_weight="0.59"
-        android:onClick="onClick"
         android:clickable="true"
+        android:cursorVisible="true"
+        android:nestedScrollingEnabled="false"
+        android:onClick="onClick"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="35sp"
-        android:layout_marginTop="74dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="35sp" />
 </RelativeLayout>
