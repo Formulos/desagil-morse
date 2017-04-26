@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
     public void listenConfirm(boolean answer){
 
         if(answer){
-            Intent intent= new Intent(this, SelectorActivity.class);
+            Intent intent= new Intent(this, ConfigActivity.class);
 
             startActivity(intent);
 

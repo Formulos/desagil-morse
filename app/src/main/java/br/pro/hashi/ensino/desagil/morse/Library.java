@@ -23,5 +23,12 @@ public class Library {
         this.premadePhrases.add("Estou com fome");
         this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
         this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
+
+    }
+
+    public void changeNumber(String number){
+        phoneNumber = ("+"+ number);
     }
 }
+
+
