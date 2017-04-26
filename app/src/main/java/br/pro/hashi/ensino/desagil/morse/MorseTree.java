@@ -30,7 +30,6 @@ public class MorseTree {
         for (int i = 0; i < maxLayer - 1; i++){
             for(int j = 0; j < temp[i].length;j ++){
                 Node[] me = temp[i+1];
-                System.out.println(Library.morseTree.length);
                 Node meh = temp[i+1][j*2 + 1];
                 nodes[count].setLeft(temp[i + 1][j * 2]);
 
@@ -48,8 +47,14 @@ public class MorseTree {
     }
 
 
-    public char translate(boolean[] code) {
-        return '?';
+    public String translate(boolean[] code) {
+
+        Node node = tree[0];
+        for (int i = 0; i < code.length; i ++){
+            node = code[i] ? node.getRight():node.getLeft();
+        }
+
+        return node.getCore() != null ? node.getCore() : "blank";
     }
 
 }

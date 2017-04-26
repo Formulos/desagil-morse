@@ -29,20 +29,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         MorseTree tree = new MorseTree();
         tree.generateTree(Library.morseTree);
 
-        for (Node node: tree.getTree()) {
-            System.out.println(node.getCore());
-            Node temp = node.getLeft();
-            if(temp != null){
-                System.out.println(temp.getCore());
-            }
-            temp = node.getRight();
-            if(temp != null){
-                System.out.println(temp.getCore());
-            }
-
-        }
-
-
+        System.out.println(tree.translate(new boolean[] {true, false, false, true}));
 
     }
 
