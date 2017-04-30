@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class SendActivity extends AppCompatActivity {
     Library lib = new Library();
@@ -29,6 +31,8 @@ public class SendActivity extends AppCompatActivity {
 
         //ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
         //layout.addView(textView);
+
+
     }
 
     public void sendMessage(View view) {
@@ -37,7 +41,12 @@ public class SendActivity extends AppCompatActivity {
 
 
         try {
-            manager.sendTextMessage(lib.phoneNumber, null, message, null, null);
+            manager.sendTextMessage(null, null, message, null, null);
+
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+            String numero = prefs.getString("keystring","");
+            System.out.print(numero);
 
             Toast toast = Toast.makeText(this, "Mensagem enviada ao número", Toast.LENGTH_SHORT);
             toast.show();
