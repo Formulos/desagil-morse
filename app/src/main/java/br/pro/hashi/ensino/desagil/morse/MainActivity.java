@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
         }
         else{
-            titleText.setText("ok then");
+            Intent intent= new Intent(this, Dicionario.class);
+            startActivity(intent);
         }
 
     }
