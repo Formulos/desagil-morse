@@ -1,5 +1,8 @@
 package br.pro.hashi.ensino.desagil.morse;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by Jean Low on 23/04/2017.
  */
@@ -7,6 +10,8 @@ package br.pro.hashi.ensino.desagil.morse;
 public class Node {
 
     private static int layer = 0;
+    private static LinkedList<Boolean> adress = new LinkedList<Boolean>() {
+    };
     private String core;
     private Node left;
     private Node right;
@@ -71,11 +76,28 @@ public class Node {
     public boolean getPath(){
         return this.path;
     }
-    /* Deixem isso comigo, gostei do problema -- jean
+
     public boolean[] getFullPath(){
-        boolean[] lista = getFullPath(new Boolean[])
-        return lista
+        adress = new LinkedList<Boolean>();
+
+        adress.add(this.firstPath());
+
+        int count = 0;
+        boolean[] lista = new boolean[adress.size()];
+        for (boolean i:
+             adress) {
+            lista[count] = i;
+            count ++;
+        }
+
+        return lista;
     }
-    */
+
+    private boolean firstPath(){
+        if(parent.core != null){
+            adress.add(parent.firstPath());
+        }
+        return this.path;
+    }
 
 }
