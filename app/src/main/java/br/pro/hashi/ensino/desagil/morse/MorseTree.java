@@ -34,6 +34,14 @@ public class MorseTree {
             }
         }
         this.tree = nodes;
+
+        //coll way for setting how many layers a regular binary tree have, making the code generic
+        int size = nodes.length + 1;
+        size = Integer.highestOneBit(size);
+        int powTwo = Integer.bitCount(~size); //could I use size -1? yes... I do.
+        nodes[0].setLayer(powTwo);
+        //E sim Ale, eu sei que eu podia resumir tudo em uma linha...
+
         return (nodes);
         
     }

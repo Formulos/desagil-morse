@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
         System.out.println(tree.translate(new boolean[] {true, false, false, true}));
 
+        Dicionario dick = new Dicionario();
+        dick.generate(tree);
+
         boolean[] test = tree.getAdress(23);
         for (boolean i:
              test) {
