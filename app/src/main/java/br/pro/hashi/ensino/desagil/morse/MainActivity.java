@@ -26,6 +26,23 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         button = (Button) findViewById(R.id.button);
         System.out.println("Teste");
 
+        MorseTree tree = new MorseTree();
+        tree.generateTree(Library.morseTree);
+
+        for (Node node: tree.getTree()) {
+            System.out.println(node.getCore());
+            Node temp = node.getLeft();
+            if(temp != null){
+                System.out.println(temp.getCore());
+            }
+            temp = node.getRight();
+            if(temp != null){
+                System.out.println(temp.getCore());
+            }
+
+        }
+
+
 
     }
 
