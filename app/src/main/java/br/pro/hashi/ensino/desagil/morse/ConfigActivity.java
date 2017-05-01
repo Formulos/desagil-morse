@@ -34,7 +34,7 @@ public class ConfigActivity extends AppCompatActivity {
             // All objects are from android.context.Context
             SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
-            editor.putString("Numero", "+1234567890");
+            editor.putString("Numero", "+"+ number);
 
 
 
@@ -46,8 +46,8 @@ public class ConfigActivity extends AppCompatActivity {
             Log.d("teste","Depois do commit");
 
             //SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this); // tenta ler as preferencias
-            String numero = settings.getString("Numero","");
-            Log.d("numero","outcome = " + numero);
+            String numero = settings.getString("Numero",null);
+            Log.d("numero","outcome = " + numero); // printa o numero no log para ver se esta certo
             
         }
         catch(IllegalArgumentException exception) {

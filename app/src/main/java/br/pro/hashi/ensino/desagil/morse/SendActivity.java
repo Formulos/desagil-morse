@@ -41,12 +41,15 @@ public class SendActivity extends AppCompatActivity {
 
 
         try {
-            manager.sendTextMessage(null, null, message, null, null);
 
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
-            String numero = prefs.getString("keystring","");
+            String numero = settings.getString("keystring","");
             System.out.print(numero);
+
+            manager.sendTextMessage(numero, null, message, null, null);
+
+
 
             Toast toast = Toast.makeText(this, "Mensagem enviada ao número", Toast.LENGTH_SHORT);
             toast.show();
