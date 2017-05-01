@@ -44,7 +44,8 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
             public void run() {
                 NextHint();
             }
-        }, 3000);
+        }, 1000);
+
 
         phraseSelector.setOnTouchListener(new OnSwipeTouchListener(this){
             public void onSwipeTop(){
@@ -75,10 +76,11 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
     }
 
     public void NextHint(){
-        HintIter+= 1;
-        HintIter%= HintBook.size();
         HintSelector.setText(HintBook.get(HintIter));
+        HintIter+= 1;
+        NextHint();
     }
+
 
     public void askConfirm(){
 
@@ -86,7 +88,7 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
     }
 
     public void listenConfirm(boolean isConfirmed){
-x
+
         if (isConfirmed){
             Intent act= new Intent(this, SendActivity.class);
             Log.d(phraseBook.get(phraseIter),"AAA");
