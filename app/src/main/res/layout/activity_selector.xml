@@ -19,4 +19,19 @@
         android:layout_marginTop="74dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/HintView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.59"
+        android:onClick="onClick"
+        android:clickable="true"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/phraseSelector" />
+
+
 </RelativeLayout>

@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
     }
 
+
     public static void setSingle(MainActivity context){
         MainActivity.context= context;
     }

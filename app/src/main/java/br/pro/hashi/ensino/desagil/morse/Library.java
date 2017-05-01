@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Library {
 
-
     public List<String> premadePhrases;
+    public List<String> HintList;
     
     public String phoneNumber = ("+5511957837723");
 
@@ -23,5 +23,11 @@ public class Library {
         this.premadePhrases.add("Estou com fome");
         this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
         this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
+
+        this.HintList = new LinkedList<>();
+        this.HintList.add("Teste123");
+        this.HintList.add("Teste456");
+        this.HintList.add("Teste789");
+
     }
 }
