@@ -1,6 +1,7 @@
 package br.pro.hashi.ensino.desagil.morse;
 
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -27,15 +28,26 @@ public class ConfigActivity extends AppCompatActivity {
         String number = numberEdit.getText().toString();
 
         try {
+            Log.d("teste","Entrou no try");
 
             // We need an Editor object to make preference changes.
             // All objects are from android.context.Context
             SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
-            editor.putString("NumeroCuidador", "+9999999999999999999999999");
+            editor.putString("Numero", "+1234567890");
+
+
+
+
 
             // Commit the edits!
             editor.commit();
+
+            Log.d("teste","Depois do commit");
+
+            //SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this); // tenta ler as preferencias
+            String numero = settings.getString("Numero","");
+            Log.d("numero","outcome = " + numero);
             
         }
         catch(IllegalArgumentException exception) {
