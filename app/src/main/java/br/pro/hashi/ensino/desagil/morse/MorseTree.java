@@ -1,6 +1,5 @@
 package br.pro.hashi.ensino.desagil.morse;
 
-
 public class MorseTree {
 
     private Node[] tree;
