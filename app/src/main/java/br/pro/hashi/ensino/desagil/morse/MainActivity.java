@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         tree.generateTree(Library.morseTree);
 
         System.out.println(tree.translate(new boolean[] {true, false, false, true}));
+        System.out.println(tree.getTree().length);
 
         boolean[] test = tree.getAdress(23);
         for (boolean i:
