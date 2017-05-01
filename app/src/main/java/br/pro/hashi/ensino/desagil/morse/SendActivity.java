@@ -42,10 +42,9 @@ public class SendActivity extends AppCompatActivity {
 
         try {
 
-            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-
-            String numero = settings.getString("keystring","");
-            System.out.print(numero);
+            SharedPreferences mPrefs = getSharedPreferences("IDvalue",0); // abre o arquivo SharedPreferences onde esta o numero
+            String numero = (mPrefs.getString("Numero",""));// é um dicionario
+            Log.d("numero","Mandou " + numero);
 
             manager.sendTextMessage(numero, null, message, null, null);
 

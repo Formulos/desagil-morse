@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.morse;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -32,22 +33,22 @@ public class ConfigActivity extends AppCompatActivity {
 
             // We need an Editor object to make preference changes.
             // All objects are from android.context.Context
-            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            SharedPreferences settings = getSharedPreferences("IDvalue", 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.putString("Numero", "+"+ number);
-
-
-
 
 
             // Commit the edits!
             editor.commit();
 
-            Log.d("teste","Depois do commit");
 
-            //SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this); // tenta ler as preferencias
-            String numero = settings.getString("Numero",null);
+            String numero = settings.getString("Numero",null); // pega o numero
             Log.d("numero","outcome = " + numero); // printa o numero no log para ver se esta certo
+
+
+            /*  */
+            Intent intent= new Intent(this, SelectorActivity.class);
+            startActivity(intent);
             
         }
         catch(IllegalArgumentException exception) {
