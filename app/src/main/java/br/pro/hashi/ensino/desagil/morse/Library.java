@@ -21,8 +21,7 @@ public class Library {
         this.premadePhrases.add("Preciso ir ao banheiro");
         this.premadePhrases.add("Preciso de água");
         this.premadePhrases.add("Estou com fome");
-        this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
-        this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
+        this.premadePhrases.add("Estou com dor");
 
     }
 
