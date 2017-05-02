@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,8 +25,19 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
         titleText = (TextView) findViewById(R.id.titleText);
         button = (Button) findViewById(R.id.button);
-        System.out.println("Teste");
 
+        MorseTree tree = new MorseTree();
+        tree.generateTree(Library.morseTree);
+
+        System.out.println(tree.translate(new boolean[] {true, false, false, true}));
+        System.out.println(tree.getTree().length);
+
+        boolean[] test = tree.getAdress(23);
+        for (boolean i:
+             test) {
+            System.out.println(i + " |");
+
+        }
 
     }
 
@@ -38,9 +50,11 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
     public void listenConfirm(boolean answer){
 
         if(answer){
-            Intent intent= new Intent(this, SelectorActivity.class);
+            Intent intent= new Intent(this, ConfigActivity.class);
+            Log.d("teste","1");
 
             startActivity(intent);
+
 
         }
         else{
