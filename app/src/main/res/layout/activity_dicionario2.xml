@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.pro.hashi.ensino.desagil.morse.Dicionario2"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
+        android:text="Dicionario \nRomano-Morse"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Alpha1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Title"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:textAlignment="viewStart"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/Alpha2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Alpha1"
+        android:layout_alignBottom="@+id/Alpha1"
+        android:layout_toEndOf="@+id/Title"
+        android:fontFamily="monospace"
+        android:textAlignment="viewStart"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/Trocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Title"
+        android:layout_toEndOf="@+id/Title"
+        android:onClick="Swap"
+        android:text="Trocar" />
+
+</RelativeLayout>
