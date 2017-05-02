@@ -76,9 +76,8 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
     }
 
     public void NextHint(){
-        HintSelector.setText(HintBook.get(HintIter));
         HintIter+= 1;
-        NextHint();
+        HintSelector.setText(HintBook.get(HintIter));
     }
 
 
