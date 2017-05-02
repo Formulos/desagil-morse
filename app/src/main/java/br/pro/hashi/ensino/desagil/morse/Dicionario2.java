@@ -39,7 +39,7 @@ public class Dicionario2 extends AppCompatActivity {
         String out = " ";
         out += core + " : ";
         for (boolean i:lista){
-            out += i ? "-":".";
+            out += i ? "−":"·";
         }
 
         stage.setText(stage.getText() + "\n" + out);
