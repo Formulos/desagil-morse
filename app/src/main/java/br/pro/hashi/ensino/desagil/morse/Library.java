@@ -13,7 +13,7 @@ public class Library {
 
     public List<String> premadePhrases;
     
-    public String phoneNumber = ("+5511957837723");
+    public String phoneNumber = ("+5511957837723"); // inutil agora
 
     public Library(){
 
@@ -23,6 +23,11 @@ public class Library {
         this.premadePhrases.add("Estou com fome");
         this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
         this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
+
+    }
+
+    public void changeNumber(String number){
+        phoneNumber = ("+"+ number);
     }
 
     public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","Ü","L","Ä","P"
@@ -33,3 +38,5 @@ public class Library {
             ,null,null,null,",",null,null,null,null,":",null,null,null,null,null,null,null
     };
 }
+
+

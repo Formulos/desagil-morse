@@ -19,10 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SelectorActivity">
-        </activity>
-
-        <activity android:name=".SendActivity"></activity>
+        <activity android:name=".SelectorActivity"></activity>
+        <activity android:name=".SendActivity" />
+        <activity android:name=".ConfigActivity"></activity>
     </application>
+
 </manifest>
