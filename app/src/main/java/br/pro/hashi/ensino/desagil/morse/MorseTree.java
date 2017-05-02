@@ -1,13 +1,18 @@
 package br.pro.hashi.ensino.desagil.morse;
 
+import java.util.HashMap;
+
 public class MorseTree {
 
     private Node[] tree;
+
+    private HashMap<String,Node> path = new HashMap<>();
 
     public Node[] generateTree(String[] cores){
         Node[] nodes = new Node[cores.length];
         for (int i = 0; i < cores.length;i++ ){
             nodes[i] = new Node(cores[i],null,null);
+            path.put(nodes[i].getCore(),nodes[i]);
         }
 
         int maxLayer = 7;
@@ -34,6 +39,14 @@ public class MorseTree {
             }
         }
         this.tree = nodes;
+
+        //coll way for setting how many layers a regular binary tree have, making the code generic
+        int size = nodes.length + 1;
+        size = Integer.highestOneBit(size);
+        int powTwo = Integer.bitCount(~size); //could I use size -1? yes... I do.
+        nodes[0].setLayer(powTwo);
+        //E sim Ale, eu sei que eu podia resumir tudo em uma linha...
+
         return (nodes);
         
     }
@@ -42,15 +55,28 @@ public class MorseTree {
         return this.tree;
     }
 
+    public boolean[] getCode(String letter){
+        return path.get(letter).getFullPath();
+    }
+
+    public Node getNode(String letter){
+        return path.get(letter);
+    }
+
 
     public String translate(boolean[] code) {
 
         Node node = tree[0];
-        for (int i = 0; i < code.length; i ++){
-            node = code[i] ? node.getRight():node.getLeft();
+        for (int i = 0; i < code.length; i++) {
+            if(node != null) {
+                node = code[i] ? node.getRight() : node.getLeft();
+            }
         }
-
-        return node.getCore() != null ? node.getCore() : "blank";
+        if (node != null) {
+            return node.getCore() != null ? node.getCore() : "blank";
+        } else{
+            return "null";
+        }
     }
 
     public boolean[] getAdress(int index){

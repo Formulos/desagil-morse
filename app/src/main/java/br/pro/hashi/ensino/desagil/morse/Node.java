@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Node {
 
-    private static int layer = 0;
+    private static int layer = 7;
     private static LinkedList<Boolean> adress = new LinkedList<Boolean>() {
     };
     private String core;
@@ -75,6 +75,10 @@ public class Node {
 
     public boolean getPath(){
         return this.path;
+    }
+
+    public int getLayer(){
+        return layer;
     }
 
     public boolean[] getFullPath(){

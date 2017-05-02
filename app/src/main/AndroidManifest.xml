@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".SelectorActivity"></activity>
         <activity android:name=".SendActivity" />
+
+        <activity android:name=".Dicionario"></activity>
         <activity android:name=".ConfigActivity"></activity>
     </application>
 
