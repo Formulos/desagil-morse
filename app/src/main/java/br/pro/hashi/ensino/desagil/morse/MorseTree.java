@@ -54,11 +54,16 @@ public class MorseTree {
     public String translate(boolean[] code) {
 
         Node node = tree[0];
-        for (int i = 0; i < code.length; i ++){
-            node = code[i] ? node.getRight():node.getLeft();
+        for (int i = 0; i < code.length; i++) {
+            if(node != null) {
+                node = code[i] ? node.getRight() : node.getLeft();
+            }
         }
-
-        return node.getCore() != null ? node.getCore() : "blank";
+        if (node != null) {
+            return node.getCore() != null ? node.getCore() : "blank";
+        } else{
+            return "null";
+        }
     }
 
     public boolean[] getAdress(int index){

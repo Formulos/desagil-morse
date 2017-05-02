@@ -25,6 +25,8 @@ public class Library {
         this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
     }
 
+    public static MorseTree tree;
+
     public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","Ü","L","Ä","P"
             ,"J","B","X","C","Y","Z","Q","Ö","CH","5","4","Ŝ","3","É",null,"D","2",null,"È","+",null,null,"À","J"
             ,"1","6","=","/",null,"Ç","blank","Ĥ",null,"7","blank","Ĝ","Ñ","8",null,"9","0",null,null,null,null

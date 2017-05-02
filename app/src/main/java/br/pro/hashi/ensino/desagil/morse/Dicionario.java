@@ -10,12 +10,16 @@ public class Dicionario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dicionario);
 
+        generate(Library.tree);
+
     }
 
     public void generate(MorseTree tree){
         for (Node node: tree.getTree()) { // goes in the tree by adress size sorting.
-            if(node != null && !node.getCore().equals("blank") ){
-                print(node.getFullPath(),node.getCore());
+            if (node.getCore() != null) {
+                if (!node.getCore().equals("blank")) {
+                    print(node.getFullPath(), node.getCore());
+                }
             }
         }
 
@@ -33,9 +37,11 @@ public class Dicionario extends AppCompatActivity {
                     temp[count] = c.equals('1') ? true: false;
                     count ++;
                 }
-                if(tree.translate(temp).equals(letter)) {
-                    print(temp , letter);
-                    break;
+                if(tree.translate(temp) != null){
+                    if(tree.translate(temp).equals(letter)) {
+                        print(temp, letter);
+                        break;
+                    }
                 }
             }
         }

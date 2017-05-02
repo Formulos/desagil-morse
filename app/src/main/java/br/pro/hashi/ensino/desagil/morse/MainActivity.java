@@ -28,11 +28,12 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
 
         MorseTree tree = new MorseTree();
         tree.generateTree(Library.morseTree);
+        Library.tree = tree;
 
         System.out.println(tree.translate(new boolean[] {true, false, false, true}));
 
-        Dicionario dick = new Dicionario();
-        dick.generate(tree);
+        //Dicionario dick = new Dicionario();
+        //dick.generate(tree);
 
         boolean[] test = tree.getAdress(23);
         for (boolean i:
