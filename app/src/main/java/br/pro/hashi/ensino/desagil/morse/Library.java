@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Library {
 
-
     public List<String> premadePhrases;
+    public List<String> HintList;
     
     public String phoneNumber = ("+5511957837723"); // inutil agora
 
@@ -24,10 +24,6 @@ public class Library {
         this.premadePhrases.add("Preciso IMEDIATAMENTE de...");
         this.premadePhrases.add("Preciso IMEDIATAMENTE falar com...");
 
-    }
-
-    public void changeNumber(String number){
-        phoneNumber = ("+"+ number);
     }
 
     public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","blank","L","blank","P"
