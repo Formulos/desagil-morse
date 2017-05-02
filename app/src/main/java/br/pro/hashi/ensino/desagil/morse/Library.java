@@ -25,6 +25,8 @@ public class Library {
 
     }
 
+    public static MorseTree tree;
+
     public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","blank","L","blank","P"
             ,"J","B","X","C","Y","Z","Q","blank","blank","5","4","blank","3","blank",null,"D","2",null,"blank","blank",null,null,"blank","J"
             ,"1","6","blank","blank",null,"blank","blank","blank",null,"7","blank","blank","blank","8",null,"9","0",null,null,null,null
@@ -33,6 +35,6 @@ public class Library {
             ,null,null,null,"blank",null,null,null,null,"blank",null,null,null,null,null,null,null
     };
 
-    public static String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","!","?","()"};
+    public static String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"};
 }
 
