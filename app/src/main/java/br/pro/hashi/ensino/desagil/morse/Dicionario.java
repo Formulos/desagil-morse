@@ -2,14 +2,20 @@ package br.pro.hashi.ensino.desagil.morse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Dicionario extends AppCompatActivity {
 
+
+    private TextView Binary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dicionario);
 
+        Binary = (TextView) findViewById(R.id.Binary);
         generate(Library.tree);
 
     }
@@ -25,25 +31,8 @@ public class Dicionario extends AppCompatActivity {
 
         System.out.println("------------------------see whats hashi likes the most-----------------------------------");
 
-        int layers = tree.getTree()[0].getLayer();
-        int max = (int) Math.pow(2,layers);
-
-        for (String letter : Library.alphabet){
-            for (int i = 0; i < max; i ++) {
-                String rawPath = Integer.toBinaryString(i);
-                boolean[] temp = new boolean[rawPath.length()];
-                int count = 0;
-                for (Character c : rawPath.toCharArray()) {
-                    temp[count] = c.equals('1') ? true: false;
-                    count ++;
-                }
-                if(tree.translate(temp) != null){
-                    if(tree.translate(temp).equals(letter)) {
-                        print(temp, letter);
-                        break;
-                    }
-                }
-            }
+        for (String letter: Library.alphabet){
+            print(tree.getCode(letter), letter);
         }
     }
 
@@ -53,10 +42,12 @@ public class Dicionario extends AppCompatActivity {
         out += core + " : ";
         for (boolean i:lista){
             out += i ? "-":".";
+
         }
+
         //create new text view
         //set text view text to out
-
+        Binary.setText(Binary.getText() + "\n"+ out );
         System.out.println(out);
     }
 }

@@ -1,13 +1,18 @@
 package br.pro.hashi.ensino.desagil.morse;
 
+import java.util.HashMap;
+
 public class MorseTree {
 
     private Node[] tree;
+
+    private HashMap<String,Node> path = new HashMap<>();
 
     public Node[] generateTree(String[] cores){
         Node[] nodes = new Node[cores.length];
         for (int i = 0; i < cores.length;i++ ){
             nodes[i] = new Node(cores[i],null,null);
+            path.put(nodes[i].getCore(),nodes[i]);
         }
 
         int maxLayer = 7;
@@ -48,6 +53,14 @@ public class MorseTree {
 
     public Node[] getTree(){
         return this.tree;
+    }
+
+    public boolean[] getCode(String letter){
+        return path.get(letter).getFullPath();
+    }
+
+    public Node getNode(String letter){
+        return path.get(letter);
     }
 
 
