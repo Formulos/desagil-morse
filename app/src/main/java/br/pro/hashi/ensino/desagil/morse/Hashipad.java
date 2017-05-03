@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.Log;
+
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -28,6 +29,7 @@ public class Hashipad extends View {
 
     public Hashipad(Context context, AttributeSet attrs) {
         super(context, attrs);
+
 
         myPaint = new Paint();
         myPaint.setStyle(Paint.Style.FILL);
@@ -91,6 +93,7 @@ public class Hashipad extends View {
         this.listener = listener;
     }
 
+
     @Override
     protected void onDraw(Canvas canvas) {
 
@@ -98,3 +101,4 @@ public class Hashipad extends View {
     }
 
 }
+
