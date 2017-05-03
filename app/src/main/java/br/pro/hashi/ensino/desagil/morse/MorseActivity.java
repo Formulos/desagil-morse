@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -128,6 +129,10 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
 
     public void onSwipeLeft(){
         Log.d("Swipe", "Left");
+
+        Intent intent= new Intent(this, SelectorActivity.class);
+        startActivity(intent);
+
     }
 
     public void onSwipeUp(){
@@ -194,5 +199,15 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
         }
 
         subText.setText(temp);
+    }
+
+    public void goToDictionaryActivity(View v){
+        Intent intent= new Intent(this, Dicionario.class);
+        startActivity(intent);
+    }
+
+    public void goToConfigActivity(View v){
+        Intent intent= new Intent(this, ConfigActivity.class);
+        startActivity(intent);
     }
 }
