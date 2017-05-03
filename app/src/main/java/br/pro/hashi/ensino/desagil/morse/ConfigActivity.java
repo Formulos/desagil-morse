@@ -46,6 +46,9 @@ public class ConfigActivity extends AppCompatActivity {
             Log.d("numero","outcome = " + numero); // printa o numero no log para ver se esta certo
 
 
+            finish(); //volta para o main
+
+
             /*
             Intent intent= new Intent(this, SelectorActivity.class);
             startActivity(intent); */
