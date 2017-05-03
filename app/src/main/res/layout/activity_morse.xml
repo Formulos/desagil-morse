@@ -24,10 +24,10 @@
         android:layout_width="536dp"
         android:layout_height="215dp"
         android:layout_toEndOf="@+id/symbolPreview"
-        android:layout_marginBottom="-511dp"
         app:layout_constraintBottom_toTopOf="parent"
-        android:layout_marginLeft="-6dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-511dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,8 +35,6 @@
         android:layout_height="92dp"
         app:srcCompat="@drawable/ic_touch_app_black_24dp"
         app:layout_constraintRight_toLeftOf="parent"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="parent" />
 
     <android.support.constraint.Guideline
@@ -44,7 +42,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/guideline"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="491dp" />
+        app:layout_constraintGuide_end="491dp"
+        tools:layout_editor_absoluteY="20dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/morsePreview"
@@ -59,14 +59,14 @@
         app:layout_constraintLeft_toLeftOf="@+id/symbolPreview"
         app:layout_constraintRight_toRightOf="@+id/symbolPreview"
         app:layout_constraintTop_toBottomOf="@+id/symbolPreview"
-        tools:layout_editor_absoluteX="49dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/messageBody"
         android:layout_width="290dp"
         android:layout_height="154dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
         android:layout_marginTop="25dp"
         android:fontFamily="sans-serif"
         android:textAlignment="textStart"
@@ -74,7 +74,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@+id/symbolPreview"
-        app:layout_constraintTop_toBottomOf="@+id/morsePreview" />
+        app:layout_constraintTop_toBottomOf="@+id/morsePreview"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/charView"
@@ -88,7 +89,8 @@
         android:textAlignment="textEnd"
         android:textColor="#999999"
         app:layout_constraintBottom_toTopOf="@+id/pad"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp" />
 
     <ImageButton
         android:id="@+id/Number"
@@ -100,9 +102,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
         android:layout_marginRight="340dp"
-        app:layout_constraintHorizontal_bias="0.34" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginEnd="340dp" />
 
     <ImageButton
         android:id="@+id/Dic"
@@ -116,6 +118,29 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="340dp"
-        app:layout_constraintHorizontal_bias="0.82" />
+        app:layout_constraintHorizontal_bias="0.416"
+        android:layout_marginStart="340dp" />
+
+    <TextView
+        android:id="@+id/CommandsView"
+        android:layout_width="wrap_content"
+        android:layout_height="185dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="399dp"
+        android:text="Swipes
+\n\n
+Baixo: Confirma caractere
+\n\n
+Cima: Apaga caractere
+\n\n
+Direita: Envia mensagem
+\n\n
+Esquerda: Lista de frases"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
