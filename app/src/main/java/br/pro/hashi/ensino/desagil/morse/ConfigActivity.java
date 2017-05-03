@@ -25,7 +25,6 @@ public class ConfigActivity extends AppCompatActivity {
         numberEdit = (EditText) findViewById(R.id.numberEdit);}
 
     public void trocaNumero(View view) {
-        SmsManager manager = SmsManager.getDefault();
         String number = numberEdit.getText().toString();
 
         try {

@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.morse;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -92,10 +93,11 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
 
     @Override
     public void onShort() {
-        morsepath*=2;
 
-        if (current.getLeft()!=null && current.getLeft().getCore()!=null && !current.getLeft().getCore().equals("blank")){
+
+        if (current.getLeft()!=null && current.getLeft().getCore()!=null){
             current = current.getLeft();
+            morsepath*=2;
 
             morsify();
             printMorse();
@@ -106,11 +108,13 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
 
     @Override
     public void onLong() {
-        morsepath*=2;
-        morsepath+=1;
 
-        if (current.getRight()!=null && current.getRight().getCore()!=null && !current.getRight().getCore().equals("blank")){
+
+        if (current.getRight()!=null && current.getRight().getCore()!=null){
             current = current.getRight();
+
+            morsepath*=2;
+            morsepath+=1;
 
             morsify();
             printMorse();
@@ -154,7 +158,7 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
         //Envia as letras para o texto principal
 
         if (charCount!=0) {
-            if (current.getCore() != null) {
+            if (current.getCore() != null && !current.getCore().equals("")) {
                 message.setText(message.getText().toString().substring(0, message.getText().length() - 1));
                 message.setText(message.getText() + current.getCore() + "<");
             } else {

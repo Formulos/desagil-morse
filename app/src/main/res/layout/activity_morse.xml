@@ -10,7 +10,7 @@
         android:id="@+id/symbolPreview"
         android:layout_width="285dp"
         android:layout_height="38dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="46dp"
         android:text="Comece a digitar em Morse"
         android:textAlignment="center"
         android:textSize="22sp"
@@ -102,9 +102,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="340dp"
+        android:layout_marginRight="360dp"
         app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginEnd="340dp" />
+        android:layout_marginEnd="340dp"
+        android:layout_marginTop="0dp" />
 
     <ImageButton
         android:id="@+id/Dic"
@@ -117,9 +118,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="340dp"
-        app:layout_constraintHorizontal_bias="0.416"
-        android:layout_marginStart="340dp" />
+        android:layout_marginLeft="360dp"
+        app:layout_constraintHorizontal_bias="0.916"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="0dp" />
 
     <TextView
         android:id="@+id/CommandsView"
@@ -131,11 +133,11 @@
         android:text="Swipes
 \n\n
 Baixo: Confirma caractere
-\n\n
+\n
 Cima: Apaga caractere
-\n\n
+\n
 Direita: Envia mensagem
-\n\n
+\n
 Esquerda: Lista de frases"
         android:textSize="17sp"
         app:layout_constraintHorizontal_bias="0.32"

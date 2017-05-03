@@ -18,7 +18,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class SendActivity extends AppCompatActivity implements HashipadListener {
-    Library lib = new Library();
     private Hashipad pad;
     private String message;
     private Toast success;
@@ -26,6 +25,9 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
     private Toast invalid;
     private final int PLEASE_WORK_SMS_I_BEG_OF_YOU= 7243;
     private Toast toast;
+
+    private SharedPreferences mem;
+    private SharedPreferences.Editor memEditor;
 
     private TextView symbol;
     private TextView morse;
@@ -41,6 +43,9 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send);
+
+        mem= getSharedPreferences("IDvalue",0);
+        memEditor= mem.edit();
 
         Intent intent = getIntent();
         message = intent.getStringExtra("phrase");
@@ -59,7 +64,8 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
         symbol= (TextView) findViewById(R.id.symbolPreview);
         morse= (TextView) findViewById(R.id.morsePreview);
         phone= (TextView) findViewById(R.id.phoneNumber);
-        phone.setText(lib.phoneNumber);
+
+        phone.setText(mem.getString("Numero","none"));
 
         parent= tree.getTree()[0];
         current= parent;
@@ -115,7 +121,8 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
         }else {
             if (charCount!=charCountMax) {
                 phone.setText(phone.getText().toString().substring(0, phone.getText().length() - 1));
-                lib.phoneNumber= phone.getText().toString();
+                memEditor.putString("Numero", phone.getText().toString());
+                memEditor.commit();
                 charCount+=1;
             }
         }
@@ -124,13 +131,14 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
     public void onSwipeDown(){
 
         if (charCount!=0) {
-            if (current.getCore() != null) {
+            if (current.getCore() != null && !current.getCore().equals("")) {
                 phone.setText(phone.getText() + current.getCore());
             } else {
                 phone.setText(phone.getText() + "0");
             }
 
-            lib.phoneNumber= phone.getText().toString();
+            memEditor.putString("Numero", phone.getText().toString());
+            memEditor.commit();
             charCount-=1;
         }
 
@@ -146,7 +154,7 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
 
     public void sendMessage() {
 
-        if (!PhoneNumberUtils.isGlobalPhoneNumber(lib.phoneNumber)){
+        if (!PhoneNumberUtils.isGlobalPhoneNumber(mem.getString("Numero","none"))){
 
             invalid.show();
             return;
@@ -160,13 +168,8 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
             SmsManager manager = SmsManager.getDefault();
             try {
 
-                //SharedPreferences mPrefs = getSharedPreferences("IDvalue",0); // abre o arquivo SharedPreferences onde esta o numero
-                //String numero = (mPrefs.getString("Numero",""));// é um dicionario
-                //Log.d("numero","Mandou " + numero);
 
-                //String numero= lib.phoneNumber;
-
-                manager.sendTextMessage(lib.phoneNumber, null, message, null, null);
+                manager.sendTextMessage(mem.getString("Numero","none"), null, message, null, null);
 
                 success.show();
             } catch (Exception e) {
@@ -195,7 +198,7 @@ public class SendActivity extends AppCompatActivity implements HashipadListener 
                     SmsManager manager = SmsManager.getDefault();
                     try {
 
-                        manager.sendTextMessage(lib.phoneNumber, null, message, null, null);
+                        manager.sendTextMessage(mem.getString("Numero","none"), null, message, null, null);
 
                         success.show();
                     } catch (Exception e) {

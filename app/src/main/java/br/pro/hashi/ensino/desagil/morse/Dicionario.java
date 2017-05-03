@@ -27,7 +27,7 @@ public class Dicionario extends AppCompatActivity {
 
     public void generate(MorseTree tree){
         for (Node node: tree.getTree()) { // goes in the tree by adress size sorting.
-            if (node.getCore() != null && !node.getCore().equals("blank")) {
+            if (node.getCore() != null && !node.getCore().equals("")) {
                 print(node.getFullPath(), node.getCore(), lineCounter < 19 ? BinaryStage1:BinaryStage2);
                 lineCounter ++;
             }

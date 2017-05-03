@@ -5,6 +5,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,14 +37,18 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         tree.generateTree(Library.morseTree);
         Library.tree = tree;
 
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",0); // abre o arquivo SharedPreferences onde esta o numero
+        String numero = (mPrefs.getString("Numero","none"));// é um dicionario
+
+        if (numero.equals("none")){
+
+            SharedPreferences.Editor editor = mPrefs.edit();
+            editor.putString("Numero", Library.phoneNumber);
+            editor.commit();
+        }
+
         Intent intent= new Intent(this, MorseActivity.class);
         startActivity(intent);
-
-        //Dicionario dick = new Dicionario();
-        //dick.generate(tree);
-
-
-
     }
 /*
     public void seeTheTruth(View v){

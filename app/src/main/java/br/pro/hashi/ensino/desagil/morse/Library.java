@@ -10,10 +10,9 @@ import java.util.List;
 
 public class Library {
 
-    public List<String> premadePhrases;
-    public List<String> HintList;
+    public static List<String> premadePhrases;
     
-    public String phoneNumber = ("+5511957837723"); // inutil agora
+    public static String phoneNumber = ("+5511957837723"); // inutil agora
 
     public Library(){
 
@@ -27,12 +26,12 @@ public class Library {
 
     public static MorseTree tree;
 
-    public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","blank","L","blank","P"
-            ,"J","B","X","C","Y","Z","Q","blank","blank","5","4","blank","3","blank",null,"D","2",null,"blank","blank",null,null,"blank","J"
-            ,"1","6","blank","blank",null,"blank","blank","blank",null,"7","blank","blank","blank","8",null,"9","0",null,null,null,null
-            ,null,null,null,null,null,null,null,null,"blank","blank",null,null,null,null,"blank",null,null,"blank",null,null,null,null
-            ,"blank",null,null,null,"blank",null,null,"blank",null,null,null,null,null,null,null,null,"blank","blank",null,"blank",null,null
-            ,null,null,null,"blank",null,null,null,null,"blank",null,null,null,null,null,null,null
+    public static String[] morseTree = {null, "E","T","I","A","N","M","S","U","R","W","D","K","G","O","H","V","F","","L","","P"
+            ,"J","B","X","C","Y","Z","Q","","","5","4","","3","",null,"D","2",null,"","",null,null,"","J"
+            ,"1","6","","",null,"","","",null,"7","","","","8",null,"9","0",null,null,null,null
+            ,null,null,null,null,null,null,null,null,"","",null,null,null,null,"",null,null,"",null,null,null,null
+            ,"",null,null,null,"",null,null,"",null,null,null,null,null,null,null,null,"","",null,"",null,null
+            ,null,null,null,"",null,null,null,null,"",null,null,null,null,null,null,null
     };
 
     public static String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"};
