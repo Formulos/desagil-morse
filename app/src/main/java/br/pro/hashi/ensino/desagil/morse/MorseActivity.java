@@ -88,7 +88,6 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
         else{
             titleText.setText("ok then");
         }
-
     }
 
     @Override

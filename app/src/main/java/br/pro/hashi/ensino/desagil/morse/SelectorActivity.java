@@ -10,15 +10,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class SelectorActivity extends AppCompatActivity implements UtilityActivity{
+public class SelectorActivity extends AppCompatActivity implements UtilityActivity, HashipadListener{
 
     protected TextView phraseSelector;
     protected List<String> phraseBook;
     protected int phraseIter;
 
-    protected TextView HintSelector;
-    protected List<String> HintBook;
-    protected int HintIter;
+    private Hashipad pad;
 
     public static SelectorActivity context;
 
@@ -34,52 +32,24 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
         phraseIter= 0;
         phraseSelector.setText(phraseBook.get(phraseIter));
 
-        //HintSelector= (TextView) findViewById(R.id.HintView);
-        //HintBook= (new Library()).HintList;
-        //HintIter = 0;
-        //HintSelector.setText(HintBook.get(HintIter));
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                NextHint();
-            }
-        }, 1000);
+        pad = (Hashipad) findViewById(R.id.hashipad);
+        pad.setListener(this);
 
 
         phraseSelector.setOnTouchListener(new OnSwipeTouchListener(this){
             public void onSwipeTop(){
-                //nada
             }
-
             public void onSwipeRight(){
-                phraseIter+= 1;
-                phraseIter%= phraseBook.size();
-                phraseSelector.setText(phraseBook.get(phraseIter));
             }
-
             public void onSwipeBottom(){
-                //nada
             }
-
             public void onSwipeLeft(){
-                phraseIter+= phraseBook.size() - 1;
-                phraseIter%= phraseBook.size();
-                phraseSelector.setText(phraseBook.get(phraseIter));
             }
-
             public void onTest(){
                 Utilities.confirm(SelectorActivity.getSingle());
             }
         });
-
     }
-
-    public void NextHint(){
-        //HintIter+= 1;
-        //HintSelector.setText(HintBook.get(HintIter));
-    }
-
 
     public void askConfirm(){
 
@@ -106,5 +76,40 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
 
     public Context getContext(){
         return SelectorActivity.context;
+    }
+
+    @Override
+    public void onShort() {
+    }
+
+    @Override
+    public void onLong() {
+    }
+
+    @Override
+    public void onSwipeUp() {
+        Intent act= new Intent(this, MainActivity.class);
+        startActivity(act);
+    }
+
+    @Override
+    public void onSwipeRight() {
+        phraseIter+= 1;
+        phraseIter%= phraseBook.size();
+        phraseSelector.setText(phraseBook.get(phraseIter));
+    }
+
+    @Override
+    public void onSwipeDown() {
+        Intent act= new Intent(this, SendActivity.class);
+        act.putExtra("phrase", phraseSelector.getText().toString().substring(0, phraseSelector.getText().length() - 1));
+        startActivity(act);
+    }
+
+    @Override
+    public void onSwipeLeft() {
+        phraseIter+= phraseBook.size() - 1;
+        phraseIter%= phraseBook.size();
+        phraseSelector.setText(phraseBook.get(phraseIter));
     }
 }

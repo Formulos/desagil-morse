@@ -6,32 +6,29 @@
     android:layout_height="match_parent"
     tools:context="br.pro.hashi.ensino.desagil.morse.SelectorActivity">
 
+    <br.pro.hashi.ensino.desagil.morse.Hashipad
+        android:id="@+id/hashipad"
+        android:layout_width="536dp"
+        android:layout_height="350dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="300dp"
+        android:layout_toEndOf="@+id/symbolPreview"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <TextView
         android:id="@+id/phraseSelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="117dp"
         android:layout_weight="0.59"
         android:clickable="true"
         android:onClick="onClick"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/HintView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.59"
-        android:onClick="onClick"
-        android:clickable="true"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="35sp"
+        android:textSize="40sp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/phraseSelector" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

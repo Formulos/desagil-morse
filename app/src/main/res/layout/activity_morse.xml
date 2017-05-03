@@ -26,7 +26,7 @@
         android:layout_toEndOf="@+id/symbolPreview"
         android:layout_marginBottom="-511dp"
         app:layout_constraintBottom_toTopOf="parent"
-        android:layout_marginLeft="-6dp"
+        android:layout_marginLeft="2dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
@@ -69,6 +69,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="25dp"
         android:fontFamily="sans-serif"
+        android:text="Swipe para baixo - Confirma a letra                         Swipe para cima - Apaga a letra                        Swipe para a direita - Enviar mensaem                             Swipe para a esquerda - Frases prontas   "
         android:textAlignment="textStart"
         android:textSize="14sp"
         app:layout_constraintHorizontal_bias="1.0"
