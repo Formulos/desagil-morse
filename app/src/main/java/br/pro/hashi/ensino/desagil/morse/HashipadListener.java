@@ -1,8 +1,20 @@
 package br.pro.hashi.ensino.desagil.morse;
 
 /**
- * Created by alexandre on 02/05/17.
+ * Created by jean-low on 26/04/17.
  */
 
-public class HashipadListener {
+public interface HashipadListener {
+
+    public void onShort();
+
+    public void onLong();
+
+    public void onSwipeUp();
+
+    public void onSwipeRight();
+
+    public void onSwipeDown();
+
+    public void onSwipeLeft();
 }
