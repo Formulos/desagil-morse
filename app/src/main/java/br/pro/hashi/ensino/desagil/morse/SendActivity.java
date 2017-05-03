@@ -38,8 +38,6 @@ public class SendActivity extends AppCompatActivity {
         success= Toast.makeText(this, "Mensagem enviada com sucesso!", Toast.LENGTH_SHORT);
         failure= Toast.makeText(this, "Não foi possível enviar a mensagem, faltam as permissões necessárias", Toast.LENGTH_SHORT);
 
-
-
         //ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
         //layout.addView(textView);
 
