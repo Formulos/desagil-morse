@@ -18,10 +18,10 @@ public class Library {
     public Library(){
 
         this.premadePhrases = new LinkedList<>();
-        this.premadePhrases.add("Preciso ir ao banheiro");
-        this.premadePhrases.add("Preciso de água");
-        this.premadePhrases.add("Estou com fome");
-        this.premadePhrases.add("Estou com dor");
+        this.premadePhrases.add("Preciso ir ao banheiro ");
+        this.premadePhrases.add("Preciso de água ");
+        this.premadePhrases.add("Estou com fome ");
+        this.premadePhrases.add("Estou com dor ");
 
     }
 
