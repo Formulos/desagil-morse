@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".SelectorActivity" />
         <activity android:name=".SendActivity" />
+      
+        <activity android:name=".MorseActivity" />
         <activity android:name=".Dicionario" />
         <activity android:name=".ConfigActivity" />
         <activity android:name=".Dicionario2"></activity>

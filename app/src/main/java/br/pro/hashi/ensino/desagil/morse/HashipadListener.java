@@ -9,4 +9,12 @@ public interface HashipadListener {
     public void onShort();
 
     public void onLong();
+
+    public void onSwipeUp();
+
+    public void onSwipeRight();
+
+    public void onSwipeDown();
+
+    public void onSwipeLeft();
 }

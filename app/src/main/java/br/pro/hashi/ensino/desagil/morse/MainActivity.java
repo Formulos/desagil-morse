@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         MainActivity.setSingle(this);
         setContentView(R.layout.activity_main);
 
-        titleText = (TextView) findViewById(R.id.titleText);
+        titleText = (TextView) findViewById(R.id.symbolPreview);
         button = (Button) findViewById(R.id.button);
 
         MorseTree tree = new MorseTree();
@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
     public void listenConfirm(boolean answer){
 
         if(answer){
-            Intent intent= new Intent(this, ConfigActivity.class);
+            //Intent intent= new Intent(this, ConfigActivity.class);
+            Intent intent= new Intent(this, MorseActivity.class);
             Log.d("teste","1");
 
             startActivity(intent);
