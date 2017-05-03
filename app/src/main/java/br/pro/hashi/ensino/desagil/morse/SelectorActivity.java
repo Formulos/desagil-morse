@@ -34,10 +34,10 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
         phraseIter= 0;
         phraseSelector.setText(phraseBook.get(phraseIter));
 
-        HintSelector= (TextView) findViewById(R.id.HintView);
-        HintBook= (new Library()).HintList;
-        HintIter = 0;
-        HintSelector.setText(HintBook.get(HintIter));
+        //HintSelector= (TextView) findViewById(R.id.HintView);
+        //HintBook= (new Library()).HintList;
+        //HintIter = 0;
+        //HintSelector.setText(HintBook.get(HintIter));
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -76,8 +76,8 @@ public class SelectorActivity extends AppCompatActivity implements UtilityActivi
     }
 
     public void NextHint(){
-        HintIter+= 1;
-        HintSelector.setText(HintBook.get(HintIter));
+        //HintIter+= 1;
+        //HintSelector.setText(HintBook.get(HintIter));
     }
 
 

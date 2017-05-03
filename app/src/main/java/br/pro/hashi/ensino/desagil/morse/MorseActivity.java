@@ -129,6 +129,10 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
 
     public void onSwipeLeft(){
         Log.d("Swipe", "Left");
+
+        Intent intent= new Intent(this, SelectorActivity.class);
+        startActivity(intent);
+
     }
 
     public void onSwipeUp(){

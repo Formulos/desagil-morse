@@ -26,7 +26,6 @@ public class SendActivity extends AppCompatActivity {
         message = intent.getStringExtra("phrase");
         Log.d(message, "BBB");
         TextView phrase= (TextView) findViewById(R.id.phraseSelector);
-        phrase.setTextSize(40);
         phrase.setText(message);
 
         Intent intenticus = getIntent();
