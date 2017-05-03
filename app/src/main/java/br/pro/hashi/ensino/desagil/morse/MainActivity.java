@@ -30,27 +30,22 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         tree.generateTree(Library.morseTree);
         Library.tree = tree;
 
-        System.out.println(tree.translate(new boolean[] {true, false, false, true}));
-        System.out.println(tree.getTree().length);
+        Intent intent= new Intent(this, Dicionario.class);
+        startActivity(intent);
 
         //Dicionario dick = new Dicionario();
         //dick.generate(tree);
 
-        boolean[] test = tree.getAdress(23);
-        for (boolean i:
-             test) {
-            System.out.println(i + " |");
 
-        }
 
     }
-
+/*
     public void seeTheTruth(View v){
 
         Utilities.confirm(this,"do you wanna see the truth?");
 
     }
-
+*/
     public void listenConfirm(boolean answer){
 
         if(answer){
