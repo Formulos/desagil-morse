@@ -1,31 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.pro.hashi.ensino.desagil.morse.SendActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessage"
-        android:text="Enviar"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="165dp"
-        android:layout_marginTop="119dp"
-        android:layout_below="@+id/phrase"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/phrase"
+        android:layout_width="263dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="243dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <br.pro.hashi.ensino.desagil.morse.Hashipad
+        android:id="@+id/pad"
+        android:layout_width="536dp"
+        android:layout_height="215dp"
+        android:layout_toEndOf="@+id/symbolPreview"
+        android:layout_marginBottom="-511dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_marginLeft="-6dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="92dp"
+        app:srcCompat="@drawable/ic_touch_app_black_24dp"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/symbolPreview"
+        android:layout_width="234dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="15dp"
+        android:text="É possível alterar o número via input morse"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <TextView
+        android:id="@+id/morsePreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/symbolPreview" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="115dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
-</RelativeLayout>
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/phrase"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.496" />
+
+</android.support.constraint.ConstraintLayout>
