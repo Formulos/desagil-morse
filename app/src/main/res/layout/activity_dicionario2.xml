@@ -47,9 +47,19 @@
         android:id="@+id/Trocar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Title"
-        android:layout_toEndOf="@+id/Title"
         android:onClick="Swap"
-        android:text="Trocar" />
+        android:text="Trocar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp" />
+
+    <Button
+        android:id="@+id/Retorno2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Alpha2"
+        android:layout_alignStart="@+id/Trocar"
+        android:onClick="Back"
+        android:text="Inicio" />
 
 </RelativeLayout>

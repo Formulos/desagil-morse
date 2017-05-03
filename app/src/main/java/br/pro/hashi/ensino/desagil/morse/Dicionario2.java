@@ -50,4 +50,8 @@ public class Dicionario2 extends AppCompatActivity {
         Intent intent= new Intent(this, Dicionario.class);
         startActivity(intent);
     }
+    public void Back(View V) {
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
