@@ -90,4 +90,22 @@
         app:layout_constraintBottom_toTopOf="@+id/pad"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <ImageButton
+        android:id="@+id/Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToConfigActivity"
+        app:srcCompat="@android:drawable/ic_dialog_dialer"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="-8dp" />
+
+    <ImageButton
+        android:id="@+id/Dic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToDictionaryActivity"
+        app:srcCompat="?android:attr/actionModeFindDrawable"
+        tools:layout_editor_absoluteX="335dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
 </android.support.constraint.ConstraintLayout>

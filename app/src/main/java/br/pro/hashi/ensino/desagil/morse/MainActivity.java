@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements UtilityActivity {
         tree.generateTree(Library.morseTree);
         Library.tree = tree;
 
-        Intent intent= new Intent(this, Dicionario.class);
+        Intent intent= new Intent(this, MorseActivity.class);
         startActivity(intent);
 
         //Dicionario dick = new Dicionario();
