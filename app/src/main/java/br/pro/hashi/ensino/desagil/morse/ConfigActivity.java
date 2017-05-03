@@ -55,6 +55,10 @@ public class ConfigActivity extends AppCompatActivity {
             Log.e("SendActivity", "number or message empty");
         }
     }
+    public void Back(View V) {
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }
 
