@@ -59,8 +59,7 @@ public class ConfigActivity extends AppCompatActivity {
         }
     }
     public void Back(View V) {
-        Intent intent= new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish(); //volta para o main
     }
 
 }
