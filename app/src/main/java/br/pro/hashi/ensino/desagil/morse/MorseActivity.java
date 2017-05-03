@@ -94,7 +94,7 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
     public void onShort() {
         morsepath*=2;
 
-        if (current.getLeft()!=null && current.getLeft().getCore()!=null){
+        if (current.getLeft()!=null && current.getLeft().getCore()!=null && !current.getLeft().getCore().equals("blank")){
             current = current.getLeft();
 
             morsify();
@@ -109,7 +109,7 @@ public class MorseActivity extends AppCompatActivity implements UtilityActivity,
         morsepath*=2;
         morsepath+=1;
 
-        if (current.getRight()!=null && current.getRight().getCore()!=null){
+        if (current.getRight()!=null && current.getRight().getCore()!=null && !current.getRight().getCore().equals("blank")){
             current = current.getRight();
 
             morsify();
